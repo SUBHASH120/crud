@@ -1,11 +1,14 @@
 import express from 'express';
+import dotenv from 'dotenv';
 import customers from './routes/customers.js';
+// Load environment variables from .env file
+dotenv.config();
 const app = express();
-const port = 3000;
+const PORT = process.env.PORT || 3000;
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }))
 app.use('/',customers);
 
-app.listen(port,()=>{
-    console.log(`Server is running on http://localhost:${port}`);
+app.listen(PORT,()=>{
+    console.log(`Server is running on http://localhost:${PORT}`);
 })
