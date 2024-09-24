@@ -14,7 +14,8 @@ export const getCustomerById = async(req,res)=>{
     const { id }= req.params;
     try {
         const result = await pool.query('SELECT * FROM customers WHERE customer_id = $1',[id])
-        res.status(200).json({message:'Data receive successfully', result: result.rows[0]})
+        const results = result.rowCount > 0 ? result.rows[0]:[];
+        res.status(200).json({message:'Data receive successfully', result:results})
         
     } catch (error) {
         res.status(500).json({message:error.message})
