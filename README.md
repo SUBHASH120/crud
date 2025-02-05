@@ -16,6 +16,7 @@ for products table in cmd
 ## postgres# CREATE DATABASE gtaa
 
 ## connect database
+
 psql -d demo_database
 
 \c gtaa
@@ -37,3 +38,13 @@ email VARCHAR(30)
 #"scripts": {"start": "nodemon app.js"}
 #npm start
 #nano controllers/customers.js
+
+### open ubantu run commond
+
+# sudo su - //(to become a super user)
+
+# ls
+
+# cd crud
+
+# npm start
